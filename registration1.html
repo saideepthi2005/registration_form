@@ -9,7 +9,6 @@
             margin: 0;
             padding: 0;
         }
-
         .form-container {
             max-width: 500px;
             margin: 50px auto;
@@ -18,18 +17,15 @@
             border-radius: 15px;
             box-shadow: 0 8px 16px rgba(0,0,0,0.2);
         }
-
         h1 {
             text-align: center;
             color: #333;
         }
-
         label {
             display: block;
             margin-top: 15px;
             font-weight: bold;
         }
-
         input[type="text"],
         input[type="password"],
         input[type="email"],
@@ -42,26 +38,21 @@
             border: 1px solid #ccc;
             box-sizing: border-box;
         }
-
         textarea {
             resize: vertical;
         }
-
         .radio-group,
         .checkbox-group {
             margin-top: 10px;
         }
-
         .radio-group input,
         .checkbox-group input {
             margin-right: 5px;
         }
-
         .buttons {
             margin-top: 20px;
             text-align: center;
         }
-
         input[type="submit"],
         input[type="reset"] {
             padding: 10px 20px;
@@ -71,23 +62,18 @@
             border: none;
             cursor: pointer;
         }
-
         input[type="submit"] {
             background-color: #4CAF50;
             color: white;
         }
-
         input[type="reset"] {
             background-color: #f44336;
             color: white;
         }
-
         input[type="submit"]:hover,
         input[type="reset"]:hover {
             opacity: 0.9;
         }
-
-        /* Style for the success message */
         .success-message {
             color: green;
             font-size: 18px;
@@ -102,22 +88,17 @@
 <div class="form-container">
     <form id="registrationForm">
         <h1>Enter your details</h1>
-
         <label for="name">Name:</label>
         <input type="text" name="name" id="name" required>
-
         <label for="password">Password:</label>
         <input type="password" name="password" id="password" required>
-
         <label for="email">Email:</label>
         <input type="email" name="email" id="email" required>
-
         <label>Gender:</label>
         <div class="radio-group">
             <input type="radio" name="gender" value="male" required> Male&nbsp;&nbsp;
             <input type="radio" name="gender" value="female"> Female
         </div>
-
         <label>Date of Birth:</label>
         <select id="day" name="day" required></select>&nbsp;
         <select name="month" required>
@@ -135,17 +116,14 @@
             <option>Dec</option>
         </select>&nbsp;
         <select name="year" id="year" required></select>
-
         <label>Languages Known:</label>
         <div class="checkbox-group">
             <input type="checkbox" name="lang" value="telugu"> Telugu&nbsp;
             <input type="checkbox" name="lang" value="hindi"> Hindi&nbsp;
             <input type="checkbox" name="lang" value="english"> English
         </div>
-
         <label for="address">Address:</label>
         <textarea name="address" rows="4" cols="30" id="address" required></textarea>
-
         <div class="buttons">
             <input type="submit" value="Register">
             <input type="reset" value="Reset">
@@ -155,8 +133,6 @@
         You are registered successfully!
     </div>
 </div>
-
-<!-- JavaScript to populate day and year dropdowns -->
 <script>
     // Populate day dropdown
     const daySelect = document.getElementById("day");
@@ -166,8 +142,6 @@
         option.text = i;
         daySelect.appendChild(option);
     }
-
-    // Populate year dropdown from 2001 to 2007
     const yearSelect = document.getElementById("year");
     for (let y = 2001; y <= 2007; y++) {
         let option = document.createElement("option");
@@ -175,21 +149,14 @@
         option.text = y;
         yearSelect.appendChild(option);
     }
-
-    // Handling the form submission
     document.getElementById("registrationForm").addEventListener("submit", function(event) {
-        event.preventDefault(); // Prevent form submission
-
-        // Show the success message
+        event.preventDefault(); 
         document.getElementById("successMessage").style.display = "block";
-
-        // Optionally, reset the form after submission
         setTimeout(function() {
             document.getElementById("registrationForm").reset();
-            document.getElementById("successMessage").style.display = "none"; // Hide the success message after 5 seconds
-        }, 3000); // Hide the message after 3 seconds
+            document.getElementById("successMessage").style.display = "none"; 
+        }, 3000); 
     });
 </script>
-
 </body>
 </html>
